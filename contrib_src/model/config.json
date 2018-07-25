@@ -54,12 +54,5 @@
       ]
     }
   },
-  "script": [
-    {
-      "type": "bash",
-      "variables": {
-        "file_name": "start_CascadedFCN_Liver.sh"
-      }
-    }
-  ]
+  "allow_user_input": true
 }
