@@ -1,6 +1,5 @@
 {
   "docker_id": "modelhub/main_caffe_jonlong:0.2.0",
-  "branch_id": "master",
   "external_contrib_files": [
     {
       "src_url": "https://www.dropbox.com/s/aoykiiuu669igxa/step1_weights.caffemodel?dl=1",
