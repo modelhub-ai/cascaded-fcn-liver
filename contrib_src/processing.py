@@ -58,7 +58,9 @@ class ImageProcessor(ImageProcessorBase):
         inferenceResults = self._to_rgba(inferenceResults)
         result = PIL.Image.fromarray(inferenceResults, 'RGBA')
         result = result.resize((self.inputSize[1],self.inputSize[0]), resample = PIL.Image.NEAREST)
-        return result
+        # output as numpy array
+        npArr = np.array(result)
+        return npArr
 
 
     def _to_rgba(self, arr):
