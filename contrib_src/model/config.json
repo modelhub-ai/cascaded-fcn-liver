@@ -1,7 +1,7 @@
 {
   "id": "ccc16d36-d788-43eb-9e53-2125c97888df",
   "meta": {
-    "name": "CascadedFCN_Liver",
+    "name": "cascaded-fcn-liver",
     "application_area": "CT Abdomen",
     "task": "Segmentation",
     "task_extended": "Liver and liver lesion segmentation",
