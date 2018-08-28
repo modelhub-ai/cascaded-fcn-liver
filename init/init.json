@@ -1,5 +1,5 @@
 {
-  "docker_id": "modelhub/main_caffe_jonlong:0.3.0",
+  "docker_id": "modelhub/caffe-modelhub:1.0.0",
   "external_contrib_files": [
     {
       "src_url":
