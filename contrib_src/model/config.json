@@ -57,5 +57,6 @@
       ]
     }
   },
-  "allow_user_input": false
+  "allow_user_test": false,
+  "allow_sample_demo": false
 }
