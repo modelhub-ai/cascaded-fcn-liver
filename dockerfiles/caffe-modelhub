@@ -1,6 +1,8 @@
 # Use your environment image as base image
 FROM modelhub/caffe:1.0.0
 
+RUN apt-get update && apt-get install -y libmagic1
+
 # Install requirements
 RUN pip install Flask==0.12.2 \
     flask-cors==3.0.6 \
