@@ -51,8 +51,8 @@
       },
       "output": [
         {
-          "name": "liver mask",
-          "type": "mask_image"
+          "name": "liver contour",
+          "type": "contour_2d"
         }
       ]
     }
