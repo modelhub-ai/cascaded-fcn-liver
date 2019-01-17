@@ -1,7 +1,7 @@
 # Use your environment image as base image
 FROM modelhub/caffe:1.0.0
 
-RUN apt-get update && apt-get install -y libmagic1
+RUN apt-get update && apt-get install -y libmagic1 python-opencv
 
 # Install requirements
 RUN pip install Flask==0.12.2 \
@@ -12,14 +12,14 @@ RUN pip install Flask==0.12.2 \
     jupyter==1.0.0 \
     netron==2.8.2 \
     requests==2.20.0 \
-    python-magic==0.4.15 \
-    opencv-python==3.4.4.19
+    python-magic==0.4.15
 
 # Make port 80 available to the world outside this container
 EXPOSE 80 81 8888
 
 # Define environment variable
 ENV PYTHONPATH /usr/local:/framework/:/contrib_src/:$PYTHONPATH
+# ENV PYTHONPATH=/app/caffe/python:$PYTHONPATH
 
 # Set the working directory to /framework
 WORKDIR /framework
