@@ -1,7 +1,8 @@
+import os
+os.environ['GLOG_minloglevel'] = '2'
 import caffe
 caffe.set_mode_cpu()
 import json
-import os
 from processing import ImageProcessor
 from modelhublib.model import ModelBase
 
