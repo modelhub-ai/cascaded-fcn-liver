@@ -13,6 +13,11 @@
     },
     {
       "src_url":
+        "https://github.com/modelhub-ai/cascaded-fcn-liver/releases/download/v1.0/step1_weights.caffemodel",
+      "dest_file_path": "/contrib_src/model/model.caffemodel"
+    },
+    {
+      "src_url":
         "https://github.com/modelhub-ai/cascaded-fcn-liver/releases/download/v1.0/step2_weights.caffemodel",
       "dest_file_path": "/contrib_src/model/step2/step2_weights.caffemodel"
     }
