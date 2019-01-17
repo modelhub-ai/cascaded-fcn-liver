@@ -17,6 +17,7 @@ RUN apt-get update && apt-get upgrade -y \
 # Install some python packages
 #RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 #RUN pip install --no-cache-dir future hypothesis numpy protobuf six
+RUN pip install opencv-python==3.4.4.19
 
 # Caffe installation: Jonlong's special version for CascadeFCN
 RUN git clone --depth 1 --branch jonlong --recursive https://github.com/mohamed-ezz/caffe.git \
