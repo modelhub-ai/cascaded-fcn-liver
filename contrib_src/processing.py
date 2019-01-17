@@ -26,14 +26,14 @@ class ImageProcessor(ImageProcessorBase):
         self.inputSize = npArr.shape
         npArr = npArr.astype(np.float)
         npArr[npArr>1200] = 0
-        npArr = np.clip(npArr, -100, 400)    
+        npArr = np.clip(npArr, -100, 400)
         npArr = self._normalize(npArr)
         npArr = self._rescale(npArr, (388,388))
         npArr = np.pad(npArr,((92,92),(92,92)), mode='reflect')
         npArr = npArr[np.newaxis, np.newaxis, ...]
         return npArr
-    
-    
+
+
     def _rescale(self, img, shape=None):
         height, width = shape
         max_ = np.max(img)
@@ -62,7 +62,7 @@ class ImageProcessor(ImageProcessorBase):
         npArr = np.array(result)[:,:,0]
         npArr[npArr == 255] = 1
         # get contours
-        im2, contours, heirarchy = cv.findContours(npArr.astype(np.uint8), cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
+        contours, heirarchy = cv.findContours(npArr.astype(np.uint8), cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
         contoursList = [np.reshape(contour, (contour.shape[0], contour.shape[2]) ).tolist() for contour in contours]
         return contoursList
 
@@ -72,5 +72,3 @@ class ImageProcessor(ImageProcessorBase):
         arr = (arr*255).astype(np.uint8)
         alpha = np.full((arr.shape), 255, dtype=np.uint8)
         return np.asarray(np.dstack((arr, arr, arr, alpha)), dtype=np.uint8)
-
-
