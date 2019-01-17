@@ -5,7 +5,7 @@ import numpy as np
 import json
 import scipy
 import scipy.misc
-
+import cv2 as cv
 
 class ImageProcessor(ImageProcessorBase):
 
@@ -54,13 +54,17 @@ class ImageProcessor(ImageProcessorBase):
         # create mask
         inferenceResults[inferenceResults < 0.5] = 0
         inferenceResults[inferenceResults >= 0.5] = 1
-        # convert to 4 channels
+        # # convert to 4 channels
         inferenceResults = self._to_rgba(inferenceResults)
         result = PIL.Image.fromarray(inferenceResults, 'RGBA')
         result = result.resize((self.inputSize[1],self.inputSize[0]), resample = PIL.Image.NEAREST)
         # output as numpy array
-        npArr = np.array(result)
-        return npArr
+        npArr = np.array(result)[:,:,0]
+        npArr[npArr == 255] = 1
+        # get contours
+        im2, contours, heirarchy = cv.findContours(npArr.astype(np.uint8), cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
+        contoursList = [np.reshape(contour, (contour.shape[0], contour.shape[2]) ).tolist() for contour in contours]
+        return contoursList
 
 
     def _to_rgba(self, arr):
