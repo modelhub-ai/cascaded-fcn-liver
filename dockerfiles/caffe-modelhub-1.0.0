@@ -19,7 +19,6 @@ EXPOSE 80 81 8888
 
 # Define environment variable
 ENV PYTHONPATH /usr/local:/framework/:/contrib_src/:$PYTHONPATH
-# ENV PYTHONPATH=/app/caffe/python:$PYTHONPATH
 
 # Set the working directory to /framework
 WORKDIR /framework
