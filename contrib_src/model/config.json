@@ -21,6 +21,7 @@
   },
   "model": {
     "description": "This model showcases the first step of the Automatic Liver and Lesion Segmentation. It segments the liver on a single slice CT image. The trained model for the second step (lesion segmentation) is included but not executed in the demo.",
+    "provenance": "https://github.com/IBBM/Cascaded-FCN",
     "architecture": "Fully Convolutional Network (FCN)",
     "learning_type": "Supervised learning",
     "format": ".caffemodel",
