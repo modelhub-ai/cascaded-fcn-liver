@@ -46,7 +46,7 @@
       "output": [
         {
           "name": "liver contour",
-          "type": "contour_2d"
+          "type": "contour"
         }
       ]
     }
